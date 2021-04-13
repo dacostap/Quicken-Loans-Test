@@ -1,0 +1,88 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Expense</th>
+            <th scope="col">Add</th>
+            <th scope="col">Total Expenses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input type="text" class="form-control" placeholder="Enter Name">
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseOne">
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary" (click)="addExpense(1)"><b>+</b></button>
+            </td>
+            <td>
+                <label> ${{ studentOneTotal }} </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" class="form-control" placeholder="Enter Name">
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseTwo">
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary" (click)="addExpense(2)"><b>+</b></button>
+            </td>
+            <td>
+                <label> ${{ studentTwoTotal}} </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" class="form-control" placeholder="Enter Name">
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseThree">
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary" (click)="addExpense(3)"><b>+</b></button>
+            </td>
+            <td>
+                <label> ${{ studentThreeTotal}} </label>
+            </td>
+        </tr>
+     
+    </tbody>
+</table>
+
+<div class="col text-center">
+<button type="button" class="btn btn-outline-primary btn-lg" (click)="calculate()">Calculate</button>
+</div>
+<!-- 
+<div class="formContainer">
+    <form class="form-floating">
+        <input type="text" id="floating_name" value="">
+        <span class="floating-label">Enter</span>
+      </form>
+    <div class="input-group">
+        <input type="text"  class="form-control" placeholder="Enter Name">
+        <input type="text"  class="form-control" placeholder="Add Expense" [value]="personalExpenseOne" >
+        <button type="button" class="btn btn-secondary" (click)="addExpense(1)">Add</button>
+    </div>
+    <label> Total Expenses are {{ personalExpenseOne}} </label>
+    <div class="input-group">
+        <input type="text"  class="form-control" placeholder="Enter Name">
+        <input type="text"  class="form-control" placeholder="Add Expense">
+        <button type="button" class="btn btn-secondary">Add</button>
+    </div>
+    <label class="text-muted">
+            Total Expenses are {{ personalExpenseOne}}
+    </label>
+    <div class="input-group">
+        <input type="text"  class="form-control" placeholder="Enter Name">
+        <input type="text"  class="form-control" placeholder="Add Expense">
+        <button type="button" class="btn btn-secondary">Add</button>
+    </div>
+    <label class="text-muted">
+            Total Expenses are {{ personalExpenseOne}}
+    </label>
+</div> -->

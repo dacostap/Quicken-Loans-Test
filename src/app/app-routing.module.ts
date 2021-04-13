@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalculatorComponent } from './calculator/calculator/calculator.component';
+import { CalculatorComponent } from './road-trip-calculator/calculator.component';
 
 const routes: Routes = [
 
@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path:'**',
     pathMatch:'full',
-    redirectTo: '/#'
+    redirectTo: '/road-trip-calculator'
   }
 ];
 
