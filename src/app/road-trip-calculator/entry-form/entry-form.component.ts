@@ -28,9 +28,10 @@ export class EntryFormComponent implements OnInit {
 
   // each individual expense a student occurs is stored in this 
   // variable then when "added" with button is added to total and cleared 
-  public personalExpenseOne: number = 0;
-  public personalExpenseTwo: number = 0;
-  public personalExpenseThree: number = 0;
+  // set them to strings becuase I wanted the input box empty 
+  public personalExpenseOne: string = '';
+  public personalExpenseTwo: string = '';
+  public personalExpenseThree: string = '';
   public testing: any[] =[];
 
   constructor(private  calculatorService: CalculatorService, private store: Store<AppState>) {
@@ -51,18 +52,18 @@ export class EntryFormComponent implements OnInit {
 
     if (id == 1) {
 
-      this.studentOne.debt += +this.personalExpenseOne;
-      this.personalExpenseOne = 0;
+      this.studentOne.debt += +Number(this.personalExpenseOne);
+      this.personalExpenseOne = '';
     }
     if (id == 2) {
 
-      this.studentTwo.debt += +this.personalExpenseTwo;
-      this.personalExpenseTwo = 0;
+      this.studentTwo.debt += +Number(this.personalExpenseTwo);
+      this.personalExpenseTwo = '';
     }
     if (id == 3) {
 
-      this.studentThree.debt += +this.personalExpenseThree;
-      this.personalExpenseThree = 0;
+      this.studentThree.debt += +Number(this.personalExpenseThree);
+      this.personalExpenseThree = '';
     }
 
   }

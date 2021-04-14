@@ -10,10 +10,11 @@
     <tbody>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentOne.name">
+                <!-- Placeholders removed so it looks better on mobile -->
+                <input type="text" class="form-control" style="min-width: 60px;" [(ngModel)]="studentOne.name">
             </td>
             <td>
-                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseOne">
+                <input type="text" class="form-control" [(ngModel)]="personalExpenseOne">
             </td>
             <td>
                 <button type="button" class="btn btn-secondary" (click)="addExpense(1)"><b>+</b></button>
@@ -24,10 +25,10 @@
         </tr>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentTwo.name">
+                <input type="text" class="form-control" [(ngModel)]="studentTwo.name">
             </td>
             <td>
-                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseTwo">
+                <input type="text" class="form-control" [(ngModel)]="personalExpenseTwo">
             </td>
             <td>
                 <button type="button" class="btn btn-secondary" (click)="addExpense(2)"><b>+</b></button>
@@ -38,10 +39,10 @@
         </tr>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentThree.name">
+                <input type="text" class="form-control" [(ngModel)]="studentThree.name">
             </td>
             <td>
-                <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseThree">
+                <input type="text" class="form-control" [(ngModel)]="personalExpenseThree">
             </td>
             <td>
                 <button type="button" class="btn btn-secondary" (click)="addExpense(3)"><b>+</b></button>
