@@ -23,10 +23,15 @@ app.post('/getData', (req, res) =>
 
 
 app.post('/post-test', express.urlencoded({extended: false}), express.json(), (request,response) => {
-    const amountOne     = Number( request.body.amountOne );
-    const amountTwo     = Number( request.body.amountTwo );
-    const amountThree   = Number( request.body.amountThree );
+    const studentOneName    = request.body.studentOneName;
+    const studentTwoName    = request.body.studentTwoName;
+    const studentThreeName  = request.body.studentThreeName;
 
+    const amountOne     = Number( request.body.studentOneDebt );
+    const amountTwo     = Number( request.body.studentTwoDebt );
+    const amountThree   = Number( request.body.studentThreeDebt );
+
+    
     // const total = Number(request.body.amountOne + request.body.amountTwo + request.body.amountThree);
     const total = amountOne + amountTwo + amountThree ;
 
@@ -35,9 +40,41 @@ app.post('/post-test', express.urlencoded({extended: false}), express.json(), (r
     const average = total/3;
 
     // calculate what each student owes, if they owe negative amount it means they are owed 
-    const studentOneOwes = average - amountOne;
+    const studentOneOwes    = (average - amountOne).toFixed(2);
+    const studentTwoOwes    = (average - amountTwo).toFixed(2);
+    const studentThreeOwes  = (average - amountThree).toFixed(2);
 
-    response.json({ totalExpenses: total, averageExpense: average, studentOneDebt: studentOneOwes});
+    let studentOneFinalBill = '';
+    let studentTwoFinalBill = '';
+    let studentThreeFinalBill = '';
+
+    if (studentOneOwes > 0) {
+        studentOneFinalBill = studentOneName + " owes $" + studentOneOwes;
+    }
+    else {
+
+        studentOneFinalBill = studentOneName + " is owed $" + Math.abs(studentOneOwes);
+    }
+
+    if (studentTwoOwes > 0) {
+        studentTwoFinalBill = studentTwoName + " owes $" + studentTwoOwes;
+    }
+    else {
+        studentTwoFinalBill = studentTwoName + " is owed $" + Math.abs(studentTwoOwes);
+    }
+
+    if (studentThreeOwes > 0) {
+        studentThreeFinalBill = studentThreeName + " owes $" + studentThreeOwes;
+    }
+    else {
+        studentThreeFinalBill = studentThreeName + " is owed $" + Math.abs(studentThreeOwes);
+    }
+
+// lets send 1 string of instructions for mvp 1
+
+const equalizeInstructions =" To be equal each student should have paid " + average + ".  " + studentOneFinalBill + ".  " + studentTwoFinalBill + ".  " + studentThreeFinalBill;
+
+    response.json({ instructions: equalizeInstructions });
 });
 
 

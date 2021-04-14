@@ -10,7 +10,7 @@
     <tbody>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name">
+                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentOne.name">
             </td>
             <td>
                 <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseOne">
@@ -19,12 +19,12 @@
                 <button type="button" class="btn btn-secondary" (click)="addExpense(1)"><b>+</b></button>
             </td>
             <td>
-                <label> ${{ studentOneTotal }} </label>
+                <label> ${{ studentOne.debt }} </label>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name">
+                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentTwo.name">
             </td>
             <td>
                 <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseTwo">
@@ -33,12 +33,12 @@
                 <button type="button" class="btn btn-secondary" (click)="addExpense(2)"><b>+</b></button>
             </td>
             <td>
-                <label> ${{ studentTwoTotal}} </label>
+                <label> ${{ studentTwo.debt}} </label>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" class="form-control" placeholder="Enter Name">
+                <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="studentThree.name">
             </td>
             <td>
                 <input type="text" class="form-control" placeholder="Add Expense" [(ngModel)]="personalExpenseThree">
@@ -47,7 +47,7 @@
                 <button type="button" class="btn btn-secondary" (click)="addExpense(3)"><b>+</b></button>
             </td>
             <td>
-                <label> ${{ studentThreeTotal}} </label>
+                <label> ${{ studentThree.debt}} </label>
             </td>
         </tr>
      
@@ -57,32 +57,8 @@
 <div class="col text-center">
 <button type="button" class="btn btn-outline-primary btn-lg" (click)="calculate()">Calculate</button>
 </div>
-<!-- 
-<div class="formContainer">
-    <form class="form-floating">
-        <input type="text" id="floating_name" value="">
-        <span class="floating-label">Enter</span>
-      </form>
-    <div class="input-group">
-        <input type="text"  class="form-control" placeholder="Enter Name">
-        <input type="text"  class="form-control" placeholder="Add Expense" [value]="personalExpenseOne" >
-        <button type="button" class="btn btn-secondary" (click)="addExpense(1)">Add</button>
-    </div>
-    <label> Total Expenses are {{ personalExpenseOne}} </label>
-    <div class="input-group">
-        <input type="text"  class="form-control" placeholder="Enter Name">
-        <input type="text"  class="form-control" placeholder="Add Expense">
-        <button type="button" class="btn btn-secondary">Add</button>
-    </div>
-    <label class="text-muted">
-            Total Expenses are {{ personalExpenseOne}}
-    </label>
-    <div class="input-group">
-        <input type="text"  class="form-control" placeholder="Enter Name">
-        <input type="text"  class="form-control" placeholder="Add Expense">
-        <button type="button" class="btn btn-secondary">Add</button>
-    </div>
-    <label class="text-muted">
-            Total Expenses are {{ personalExpenseOne}}
-    </label>
-</div> -->
+
+
+<div class="alert alert-info text-center m-3" role="alert">
+    Equalize the financial burden by resolving the following:  {{calculations}}
+</div>

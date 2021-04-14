@@ -9,8 +9,7 @@ import { CalculatorService } from './calculator.service';
 export class CalculatorComponent implements OnInit {
 
   constructor( private  calculatorService: CalculatorService) { 
-    console.log("calc comp hit");
-    // this.calculatorService.testEndpoint();
+
   }
 
   ngOnInit(): void {

@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EntryFormComponent } from './road-trip-calculator/entry-form/entry-form.component';
 import { FormsModule } from '@angular/forms';
 import { CalculatorService } from './road-trip-calculator/calculator.service';
+import { StoreModule } from '@ngrx/store';
+import { AppReducer } from './app.reducer';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { CalculatorService } from './road-trip-calculator/calculator.service';
     BrowserModule,
     NgbModule,
     FormsModule,
+    StoreModule.forRoot(AppReducer),
     AppRoutingModule, // if its not imported last youre gonna have a bad time
     
   ],
