@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:4201/`. The app will automatically reload if you change any of the source files.
+Run 'ng serve' for cosmetic changes. Navigate to `http://localhost:4200/road-trip-calculator`. App will reload on changes.
+
+Run `ng build` then run `npm run start` to test service calls against node nerver. Navigate to `http://localhost:4201/road-trip-calculator`.
 
 ## Code scaffolding
 
